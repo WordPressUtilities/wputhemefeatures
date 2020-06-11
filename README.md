@@ -40,6 +40,7 @@ _SCRIPTDIR="assets/js/libraries";
 
 - [x] Config file.
 - [x] Config path for JS Libs.
+- [ ] Load WP-CLI.
 - [ ] Find the active theme if called from root.
 - [ ] Find the active theme if called from a subfolder.
 - [ ] Self Update.
