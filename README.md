@@ -6,9 +6,13 @@ Add Features to a WordPress Theme
 
 Go to your favorite tools folder :
 
-```git clone https://github.com/WordPressUtilities/wputhemefeatures```
+```
+git clone https://github.com/WordPressUtilities/wputhemefeatures
+```
 
-```cd wputhemefeatures;_DIR_WPUTHEMEFEATURES=$(pwd);echo "alias wputhemefeatures=\". ${_DIR_WPUTHEMEFEATURES}/wputhemefeatures.sh\"" >> ~/.bash_profile;```
+```
+cd wputhemefeatures;_DIR_WPUTHEMEFEATURES=$(pwd);echo "alias wputhemefeatures=\". ${_DIR_WPUTHEMEFEATURES}/wputhemefeatures.sh\"" >> ~/.bash_profile;
+```
 
 ## How to use
 
@@ -28,7 +32,6 @@ You can create a `wputhemefeatures-local.sh` file in this tool root folder to ov
 #!/bin/bash
 
 _SCRIPTDIR="assets/js/libraries";
-
 ```
 
 ## Roadmap
