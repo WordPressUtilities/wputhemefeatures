@@ -1,9 +1,8 @@
 #!/bin/bash
 
-
 WPUThemeFeatures(){
 
-local _VERSION='0.1.0';
+local _VERSION='0.2.0';
 cat <<EOF
 
 ###################################
@@ -21,7 +20,12 @@ if [[ ! -f "style.css" ||  ! -f "functions.php" ]];then
     return 0;
 fi;
 
+## Init Sources
+if [[ ! -f "${_SOURCEDIR}sources/JavaScriptUtilities/README.md" ]];then
+    (cd "${_SOURCEDIR}" && git submodule update --init --recursive);
+fi;
 
+# Route to a script
 case "$1" in
     "script")
         . "${_SOURCEDIR}bin/script.sh" "${2}";
@@ -30,7 +34,6 @@ case "$1" in
         . "${_SOURCEDIR}bin/help.sh";
     ;;
 esac
-
 
 }
 

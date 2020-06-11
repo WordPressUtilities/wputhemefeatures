@@ -1,0 +1,3 @@
+[submodule "sources/JavaScriptUtilities"]
+	path = sources/JavaScriptUtilities
+	url = https://github.com/Darklg/JavaScriptUtilities/

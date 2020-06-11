@@ -12,21 +12,26 @@ Go to your favorite tools folder :
 
 ## How to use
 
-### Install a lazy-loading scripts.
+### Install a lazy-loading script.
 
 `wputhemefeatures script lazy;`
 
+### Install Vanilla Hybrid-Screens script.
+
+`wputhemefeatures script hybrid;`
+
 ## Roadmap
 
-- [ ] Install Vanilla hybridscreens.
+- [x] Install Vanilla hybridscreens.
 - [ ] Install Vanilla JSU Parallax.
 - [ ] Install Vanilla Scroll Anims.
 - [ ] Install Slick Slider.
 - [ ] Find the active theme if called from root.
 - [ ] Find the active theme if called from a subfolder.
+- [ ] Self Update.
 - [ ] Config file.
 - [ ] Config path for JS Libs.
 - [ ] Config to avoid git submodules.
-- [ ] Load script versions from submodule version if available.
+- [ ] Load script versions from submodule version tag if available.
 - [ ] Autocomplete on CLI.
 - [ ] Create a langage file ( fr_FR.po / es_ES.po ).

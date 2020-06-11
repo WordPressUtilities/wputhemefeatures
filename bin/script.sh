@@ -14,8 +14,11 @@ if [[ ! -d "assets/js/libs" ]];then
 fi;
 
 case "$1" in
-    "lazy-loading" | "lazy")
-        . "${_SOURCEDIR}scripts/lazy-loading.sh" "${2}";
+    "lazy" | "lazy-loading")
+        . "${_SOURCEDIR}bin/scripts/lazy-loading.sh" "${2}";
+    ;;
+    "hybrid" | "hybridscreens" | "hybrid-screens")
+        . "${_SOURCEDIR}bin/scripts/hybrid-screens.sh" "${2}";
     ;;
     "help" | "" | * )
         . "${_SOURCEDIR}bin/help.sh";
