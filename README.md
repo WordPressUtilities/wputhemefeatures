@@ -10,6 +10,8 @@ Go to your favorite tools folder :
 git clone https://github.com/WordPressUtilities/wputhemefeatures
 ```
 
+Add CLI shortcut :
+
 ```
 cd wputhemefeatures;_DIR_WPUTHEMEFEATURES=$(pwd);echo "alias wputhemefeatures=\". ${_DIR_WPUTHEMEFEATURES}/wputhemefeatures.sh\"" >> ~/.bash_profile;
 ```
@@ -36,17 +38,27 @@ _SCRIPTDIR="assets/js/libraries";
 
 ## Roadmap
 
+- [x] Config file.
+- [x] Config path for JS Libs.
+- [ ] Find the active theme if called from root.
+- [ ] Find the active theme if called from a subfolder.
+- [ ] Self Update.
+- [ ] Config to avoid git submodules.
+- [ ] Config file at WordPress root level or one level above.
+- [ ] Autocomplete on CLI.
+
+### Scripts
+
 - [x] Install Vanilla hybridscreens.
 - [ ] Install Vanilla JSU Parallax.
 - [ ] Install Vanilla Scroll Anims.
 - [ ] Install Slick Slider.
-- [ ] Find the active theme if called from root.
-- [ ] Find the active theme if called from a subfolder.
-- [ ] Self Update.
-- [x] Config file.
-- [x] Config path for JS Libs.
-- [ ] Config to avoid git submodules.
-- [ ] Config file at WordPress root level or one level above.
+- [ ] Install Flickity.
+- [ ] Install Masonry.
+- [ ] Install Isotope.
 - [ ] Load script versions from submodule version tag if available.
-- [ ] Autocomplete on CLI.
+
+### New Features
+
 - [ ] Create a langage file ( fr_FR.po / es_ES.po ).
+- [ ] Copy Parent template.
