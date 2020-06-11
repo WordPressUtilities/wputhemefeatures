@@ -20,6 +20,17 @@ Go to your favorite tools folder :
 
 `wputhemefeatures script hybrid;`
 
+## Config
+
+You can create a `wputhemefeatures-local.sh` file in this tool root folder to override some settings.
+
+```
+#!/bin/bash
+
+_SCRIPTDIR="assets/js/libraries";
+
+```
+
 ## Roadmap
 
 - [x] Install Vanilla hybridscreens.
@@ -29,9 +40,10 @@ Go to your favorite tools folder :
 - [ ] Find the active theme if called from root.
 - [ ] Find the active theme if called from a subfolder.
 - [ ] Self Update.
-- [ ] Config file.
-- [ ] Config path for JS Libs.
+- [x] Config file.
+- [x] Config path for JS Libs.
 - [ ] Config to avoid git submodules.
+- [ ] Config file at WordPress root level or one level above.
 - [ ] Load script versions from submodule version tag if available.
 - [ ] Autocomplete on CLI.
 - [ ] Create a langage file ( fr_FR.po / es_ES.po ).

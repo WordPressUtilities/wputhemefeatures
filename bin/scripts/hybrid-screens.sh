@@ -3,7 +3,7 @@
 echo "# Script : Hybrid Screens";
 
 # Copy script
-cp "${_SOURCEDIR}sources/JavaScriptUtilities/assets/js/vanilla-js/plugins/vanilla-hybridscreens.js" "${_CURRENT_DIR}assets/js/libs/vanilla-hybridscreens.js";
+cp "${_SOURCEDIR}sources/JavaScriptUtilities/assets/js/vanilla-js/plugins/vanilla-hybridscreens.js" "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-hybridscreens.js";
 
 # Load script
 _functions_add=$(cat <<EOF
@@ -13,7 +13,7 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('vanilla-hybridscreens', get_stylesheet_directory_uri() . '/assets/js/libs/vanilla-hybridscreens.js', array(), '1.0.0', true);
+    wp_enqueue_script('vanilla-hybridscreens', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-hybridscreens.js', array(), '1.0.0', true);
 });
 
 EOF
