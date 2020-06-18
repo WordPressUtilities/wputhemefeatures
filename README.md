@@ -56,8 +56,10 @@ _SCRIPTDIR="assets/js/libraries";
 - [ ] Install Slick Slider.
 - [ ] Install Flickity.
 - [ ] Install Masonry.
+- [ ] Install twentytwenty.
 - [ ] Install Isotope.
 - [ ] Load script versions from submodule version tag if available.
+- [ ] Create example template for complex scripts.
 
 ### New Features
 
