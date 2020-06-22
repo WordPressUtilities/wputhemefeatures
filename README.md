@@ -26,6 +26,10 @@ cd wputhemefeatures;_DIR_WPUTHEMEFEATURES=$(pwd);echo "alias wputhemefeatures=\"
 
 `wputhemefeatures script hybrid;`
 
+### Go to this tool source.
+
+`wputhemefeatures src;`
+
 ## Config
 
 You can create a `wputhemefeatures-local.sh` file in this tool root folder to override some settings.
@@ -40,11 +44,11 @@ _SCRIPTDIR="assets/js/libraries";
 
 - [x] Config file.
 - [x] Config path for JS Libs.
+- [x] Config to avoid git submodules.
 - [ ] Load WP-CLI.
 - [ ] Find the active theme if called from root.
 - [ ] Find the active theme if called from a subfolder.
 - [ ] Self Update.
-- [ ] Config to avoid git submodules.
 - [ ] Config file at WordPress root level or one level above.
 - [ ] Autocomplete on CLI.
 

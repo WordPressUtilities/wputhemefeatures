@@ -6,7 +6,7 @@ echo "# Script : Lazy Loading";
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 
 # Add as a submodule
-git submodule add https://github.com/JavaScriptUtilities/vanillaLazyLoad.git;
+bashutilities_submodule_or_install "https://github.com/JavaScriptUtilities/vanillaLazyLoad.git" "${_USE_GIT_SUBMODULES}";
 
 # Back to the main folder
 cd "${_CURRENT_DIR}";

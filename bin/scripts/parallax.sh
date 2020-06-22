@@ -6,7 +6,7 @@ echo "# Script : Parallax";
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 
 # Add as a submodule
-git submodule add https://github.com/JavaScriptUtilities/vanillaJsuParallax.git;
+bashutilities_submodule_or_install "https://github.com/JavaScriptUtilities/vanillaJsuParallax.git" "${_USE_GIT_SUBMODULES}";
 
 # Back to the main folder
 cd "${_CURRENT_DIR}";

@@ -1,3 +1,6 @@
 [submodule "sources/JavaScriptUtilities"]
 	path = sources/JavaScriptUtilities
 	url = https://github.com/Darklg/JavaScriptUtilities/
+[submodule "sources/BashUtilities"]
+	path = sources/BashUtilities
+	url = https://github.com/Darklg/BashUtilities.git
