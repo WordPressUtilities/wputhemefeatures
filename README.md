@@ -22,6 +22,10 @@ cd wputhemefeatures;_DIR_WPUTHEMEFEATURES=$(pwd);echo "alias wputhemefeatures=\"
 
 `wputhemefeatures script lazy;`
 
+### Install a block-moving script.
+
+`wputhemefeatures script move-blocks;`
+
 ### Install Vanilla Hybrid-Screens script.
 
 `wputhemefeatures script hybrid;`

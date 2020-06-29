@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.4.0';
+local _VERSION='0.5.0';
 cat <<EOF
 
 ###################################
@@ -14,7 +14,7 @@ EOF
 local _SOURCEDIR="$( dirname "${BASH_SOURCE[0]}" )/";
 local _CURRENT_DIR="$( pwd )/";
 local _SCRIPTDIR="assets/js/libs";
-local _USE_GIT_SUBMODULES="1";
+local _USE_GIT_SUBMODULES="y";
 
 
 if [[ -f "${_SOURCEDIR}wputhemefeatures-local.sh" ]];then
@@ -25,6 +25,15 @@ fi;
 if [[ ! -f "${_SOURCEDIR}sources/JavaScriptUtilities/README.md" || ! -f "${_SOURCEDIR}sources/BashUtilities/README.md" ]];then
     (cd "${_SOURCEDIR}" && git submodule update --init --recursive);
 fi;
+
+# Load BashUtilities
+
+. "${_SOURCEDIR}sources/BashUtilities/modules/files.sh";
+. "${_SOURCEDIR}sources/BashUtilities/modules/messages.sh";
+. "${_SOURCEDIR}sources/BashUtilities/modules/texttransform.sh";
+. "${_SOURCEDIR}sources/BashUtilities/modules/values.sh";
+. "${_SOURCEDIR}sources/BashUtilities/modules/git.sh";
+
 
 ## Find WordPress
 . "${_SOURCEDIR}inc/find-wordpress.sh";

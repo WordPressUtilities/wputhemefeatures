@@ -11,6 +11,9 @@ case "$1" in
     "lazy" | "lazy-loading")
         . "${_SOURCEDIR}bin/scripts/lazy-loading.sh" "${2}";
     ;;
+    "moveblocks" | "move-blocks")
+        . "${_SOURCEDIR}bin/scripts/move-blocks.sh" "${2}";
+    ;;
     "hybrid" | "hybridscreens" | "hybrid-screens")
         . "${_SOURCEDIR}bin/scripts/hybrid-screens.sh" "${2}";
     ;;
