@@ -59,8 +59,8 @@ _SCRIPTDIR="assets/js/libraries";
 ### Scripts
 
 - [x] Install Vanilla hybridscreens.
-- [ ] Install Vanilla JSU Parallax.
-- [ ] Install Vanilla Scroll Anims.
+- [x] Install Vanilla JSU Parallax.
+- [x] Install Vanilla Scroll Anims.
 - [ ] Install Slick Slider.
 - [ ] Install Flickity.
 - [ ] Install Masonry.

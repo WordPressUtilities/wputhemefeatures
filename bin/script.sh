@@ -17,6 +17,9 @@ case "$1" in
     "hybrid" | "hybridscreens" | "hybrid-screens")
         . "${_SOURCEDIR}bin/scripts/hybrid-screens.sh" "${2}";
     ;;
+    "scrollanims" | "scroll-anims")
+        . "${_SOURCEDIR}bin/scripts/scroll-anims.sh" "${2}";
+    ;;
     "parallax")
         . "${_SOURCEDIR}bin/scripts/parallax.sh" "${2}";
     ;;
