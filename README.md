@@ -49,9 +49,10 @@ _SCRIPTDIR="assets/js/libraries";
 - [x] Config file.
 - [x] Config path for JS Libs.
 - [x] Config to avoid git submodules.
+- [x] Find the active theme if called from root.
+- [x] Find the active theme if called from a subfolder.
+- [ ] Check if a feature is already installed.
 - [ ] Load WP-CLI.
-- [ ] Find the active theme if called from root.
-- [ ] Find the active theme if called from a subfolder.
 - [ ] Self Update.
 - [ ] Config file at WordPress root level or one level above.
 - [ ] Autocomplete on CLI.
