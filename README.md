@@ -72,5 +72,5 @@ _SCRIPTDIR="assets/js/libraries";
 
 ### New Features
 
-- [ ] Create a langage file ( fr_FR.po / es_ES.po ).
-- [ ] Copy Parent template.
+- [x] Create a langage file ( fr_FR.po / es_ES.po ).
+- [ ] Override a Parent template.

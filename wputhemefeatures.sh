@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.7.0';
+local _VERSION='0.8.0';
 cat <<EOF
 
 ###################################
@@ -13,6 +13,7 @@ EOF
 
 local _SOURCEDIR="$( dirname "${BASH_SOURCE[0]}" )/";
 local _CURRENT_DIR="$( pwd )/";
+local _LANGDIR="lang";
 local _SCRIPTDIR="assets/js/libs";
 local _USE_GIT_SUBMODULES="y";
 
@@ -40,10 +41,7 @@ fi;
 
 # Route to a script
 case "$1" in
-    "script")
-        . "${_SOURCEDIR}bin/script.sh" "${2}";
-    ;;
-    "src")
+    "script" | "lang" | "src")
         . "${_SOURCEDIR}bin/${1}.sh" "${2}" "${3}" "${4}" "${5}";
     ;;
     "help" | "" | * )
