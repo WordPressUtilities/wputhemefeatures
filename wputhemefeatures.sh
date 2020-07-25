@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.8.0';
+local _VERSION='0.8.1';
 cat <<EOF
 
 ###################################
@@ -38,6 +38,9 @@ fi;
 
 ## Find WordPress
 . "${_SOURCEDIR}inc/find-wordpress.sh";
+
+local _THEME_NAME=${PWD##*/};
+local _FUNCTIONS_PHP="${_CURRENT_DIR}functions.php";
 
 # Route to a script
 case "$1" in

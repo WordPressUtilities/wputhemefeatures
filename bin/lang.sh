@@ -22,4 +22,29 @@ fi;
 
 cp "${_SOURCEDIR}sources/lang.po" "${_LANG_FILE}";
 bashutilities_sed "s/fr_FR/${_LANG_NAME}/g" "${_LANG_FILE}";
+bashutilities_sed "s/mythemename/${_THEME_NAME}/g" "${_LANG_FILE}";
 echo "# The lang file has been successfully added!"
+
+###################################
+## Loading text-domain
+###################################
+
+# Load script
+_functions_add=$(cat <<EOF
+
+###################################
+## Language
+###################################
+
+add_action('after_setup_theme', function () {
+    load_theme_textdomain('${_THEME_NAME}', get_stylesheet_directory() . '/lang');
+});
+
+EOF
+);
+
+## Check lang registration
+if ! grep -q 'load_theme_textdomain' "${_FUNCTIONS_PHP}"; then
+    echo "# Registering lang in functions.php"
+    echo "${_functions_add}" >> "${_FUNCTIONS_PHP}";
+fi

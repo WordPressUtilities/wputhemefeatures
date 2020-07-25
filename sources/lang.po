@@ -1,5 +1,6 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: mythemename\n"
 "PO-Revision-Date: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"

@@ -74,3 +74,7 @@ _SCRIPTDIR="assets/js/libraries";
 
 - [x] Create a langage file ( fr_FR.po / es_ES.po ).
 - [ ] Override a Parent template.
+
+### Enhancement
+
+- [ ] Use Theme Name instead of Theme ID in .PO files.

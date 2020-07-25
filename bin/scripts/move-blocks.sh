@@ -25,5 +25,5 @@ add_action('wp_enqueue_scripts', function () {
 EOF
 );
 
-echo "${_functions_add}" >> "${_CURRENT_DIR}functions.php";
+echo "${_functions_add}" >> "${_FUNCTIONS_PHP}";
 
