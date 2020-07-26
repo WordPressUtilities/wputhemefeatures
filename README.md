@@ -51,11 +51,11 @@ _SCRIPTDIR="assets/js/libraries";
 - [x] Config to avoid git submodules.
 - [x] Find the active theme if called from root.
 - [x] Find the active theme if called from a subfolder.
+- [x] Autocomplete on CLI.
 - [ ] Check if a feature is already installed.
 - [ ] Load WP-CLI.
 - [ ] Self Update.
 - [ ] Config file at WordPress root level or one level above.
-- [ ] Autocomplete on CLI.
 
 ### Scripts
 

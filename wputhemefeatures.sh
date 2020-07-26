@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.8.1';
+local _VERSION='0.8.2';
 cat <<EOF
 
 ###################################
@@ -28,13 +28,14 @@ if [[ ! -f "${_SOURCEDIR}sources/JavaScriptUtilities/README.md" || ! -f "${_SOUR
 fi;
 
 # Load BashUtilities
-
 . "${_SOURCEDIR}sources/BashUtilities/modules/files.sh";
 . "${_SOURCEDIR}sources/BashUtilities/modules/messages.sh";
 . "${_SOURCEDIR}sources/BashUtilities/modules/texttransform.sh";
 . "${_SOURCEDIR}sources/BashUtilities/modules/values.sh";
 . "${_SOURCEDIR}sources/BashUtilities/modules/git.sh";
 
+## Autocomplete
+. "${_SOURCEDIR}inc/autocomplete.sh";
 
 ## Find WordPress
 . "${_SOURCEDIR}inc/find-wordpress.sh";
