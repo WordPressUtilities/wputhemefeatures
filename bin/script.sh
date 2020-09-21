@@ -8,6 +8,9 @@ if [[ ! -d "${_SCRIPTDIR}" ]];then
 fi;
 
 case "$1" in
+    "pjax")
+        . "${_SOURCEDIR}bin/scripts/pjax.sh" "${2}";
+    ;;
     "lazy" | "lazy-loading")
         . "${_SOURCEDIR}bin/scripts/lazy-loading.sh" "${2}";
     ;;
