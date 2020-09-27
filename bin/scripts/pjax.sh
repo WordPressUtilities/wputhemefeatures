@@ -32,11 +32,22 @@ echo "${_functions_add}" >> "${_FUNCTIONS_PHP}";
 _js_init_add=$(cat <<EOF
 
 jQuery(document).ready(function($) {
+    var \$jQBody = jQuery('body');
     new vanillaPJAX({
         targetContainer: document.body.querySelector('.main-content'),
-        ajaxParam: 'ajax'
+        ajaxParam: 'ajax',
+        callbackBeforeAJAX: function(newUrl, content) {
+            \$jQBody.trigger('wpu-ajax-loading');
+        },
+        callbackAfterLoad: function(newUrl, content) {
+            var \$values = document.getElementById('js-values');
+            document.title = \$values.getAttribute('data-page_title');
+            document.body.className = \$values.getAttribute('data-body_class');
+            \$jQBody.trigger('wpu-ajax-ready');
+        },
     });
 });
+
 EOF
 );
 
