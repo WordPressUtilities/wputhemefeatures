@@ -14,6 +14,7 @@ _functions_add=$(cat <<EOF
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('vanilla-hybridscreens', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-hybridscreens.js', array(), '1.0.0', true);
+    wp_enqueue_script('vanilla-hybridscreens-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-hybridscreens-init.js', array('vanilla-hybridscreens'), '1.0.0', true);
 });
 
 EOF
@@ -21,3 +22,13 @@ EOF
 
 echo "${_functions_add}" >> "${_FUNCTIONS_PHP}";
 
+# Load script
+_js_init_add=$(cat <<EOF
+
+window.addEventListener("DOMContentLoaded", function() {
+    new vanillaDetectHybridScreens();
+});
+EOF
+);
+
+echo "${_js_init_add}" >> "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-hybridscreens-init.js";
