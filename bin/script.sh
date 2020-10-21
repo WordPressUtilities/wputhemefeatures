@@ -23,6 +23,9 @@ case "$1" in
     "scrollanims" | "scroll-anims")
         . "${_SOURCEDIR}bin/scripts/scroll-anims.sh" "${2}";
     ;;
+    "scrolllevel" | "scroll-level")
+        . "${_SOURCEDIR}bin/scripts/scroll-level.sh" "${2}";
+    ;;
     "parallax")
         . "${_SOURCEDIR}bin/scripts/parallax.sh" "${2}";
     ;;
