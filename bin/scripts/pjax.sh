@@ -46,6 +46,7 @@ jQuery(document).ready(function($) {
             \$jQBody.trigger('wpu-ajax-ready');
         },
     });
+    \$jQBody.trigger('wpu-ajax-ready');
 });
 
 EOF

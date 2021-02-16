@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.10.0';
+local _VERSION='0.10.1';
 cat <<EOF
 
 ###################################
