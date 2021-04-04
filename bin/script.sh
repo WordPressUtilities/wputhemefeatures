@@ -8,8 +8,8 @@ if [[ ! -d "${_SCRIPTDIR}" ]];then
 fi;
 
 case "$1" in
-    "pjax")
-        . "${_SOURCEDIR}bin/scripts/pjax.sh" "${2}";
+    "animate-words" | "pjax" | "parallax")
+        . "${_SOURCEDIR}bin/scripts/${1}.sh" "${2}";
     ;;
     "lazy" | "lazy-loading")
         . "${_SOURCEDIR}bin/scripts/lazy-loading.sh" "${2}";
@@ -25,9 +25,6 @@ case "$1" in
     ;;
     "scrolllevel" | "scroll-level")
         . "${_SOURCEDIR}bin/scripts/scroll-level.sh" "${2}";
-    ;;
-    "parallax")
-        . "${_SOURCEDIR}bin/scripts/parallax.sh" "${2}";
     ;;
     "help" | "" | * )
         . "${_SOURCEDIR}bin/help.sh";
