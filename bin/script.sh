@@ -17,6 +17,9 @@ case "$1" in
     "moveblocks" | "move-blocks")
         . "${_SOURCEDIR}bin/scripts/move-blocks.sh" "${2}";
     ;;
+    "morphnumbers" | "morph-numbers")
+        . "${_SOURCEDIR}bin/scripts/morph-numbers.sh" "${2}";
+    ;;
     "hybrid" | "hybridscreens" | "hybrid-screens")
         . "${_SOURCEDIR}bin/scripts/hybrid-screens.sh" "${2}";
     ;;
