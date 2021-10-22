@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.12.0';
+local _VERSION='0.13.0';
 cat <<EOF
 
 ###################################
@@ -42,6 +42,7 @@ fi;
 
 local _THEME_NAME=${PWD##*/};
 local _FUNCTIONS_PHP="${_CURRENT_DIR}functions.php";
+local _SCSSPLUGIN="${_CURRENT_DIR}src/scss/${_THEME_NAME}/_plugins.scss";
 
 # Route to a script
 case "$1" in

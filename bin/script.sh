@@ -17,6 +17,9 @@ case "$1" in
     "moveblocks" | "move-blocks")
         . "${_SOURCEDIR}bin/scripts/move-blocks.sh" "${2}";
     ;;
+    "datepicker" | "date-picker")
+        . "${_SOURCEDIR}bin/scripts/datepicker.sh" "${2}";
+    ;;
     "morphnumbers" | "morph-numbers")
         . "${_SOURCEDIR}bin/scripts/morph-numbers.sh" "${2}";
     ;;
