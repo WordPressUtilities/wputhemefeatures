@@ -2,6 +2,11 @@
 
 echo "# Script : Parallax";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-jsuparallax-init.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Go to folder
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 

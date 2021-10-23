@@ -2,6 +2,11 @@
 
 echo "# Script : Animate Words";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-animate-words-init.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Go to folder
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 

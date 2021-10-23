@@ -2,6 +2,11 @@
 
 echo "# Script : Hybrid Screens";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-hybridscreens.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Copy script
 cp "${_SOURCEDIR}sources/JavaScriptUtilities/assets/js/vanilla-js/plugins/vanilla-hybridscreens.js" "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-hybridscreens.js";
 

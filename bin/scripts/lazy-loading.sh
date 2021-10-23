@@ -2,6 +2,11 @@
 
 echo "# Script : Lazy Loading";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/vanillaLazyLoad/js/vanilla-lazyloading.min.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Go to folder
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 

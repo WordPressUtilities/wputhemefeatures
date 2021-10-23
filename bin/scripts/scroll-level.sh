@@ -2,6 +2,11 @@
 
 echo "# Script : Scroll Level";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-scrolllevel-init.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Go to folder
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 

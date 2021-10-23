@@ -2,6 +2,11 @@
 
 echo "# Script : Scroll Anims";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-scrollanims-init.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Go to folder
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 

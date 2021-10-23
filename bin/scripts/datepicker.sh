@@ -2,6 +2,11 @@
 
 echo "# Script : Date picker";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/datepicker-init.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Back to the main folder
 cd "${_CURRENT_DIR}";
 

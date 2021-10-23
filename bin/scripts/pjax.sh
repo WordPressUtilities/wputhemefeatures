@@ -2,6 +2,11 @@
 
 echo "# Script : PJAX";
 
+if [[ -f "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-pjax-init.js" ]];then
+    echo '- Already installed !'
+    return 0;
+fi;
+
 # Go to folder
 cd "${_CURRENT_DIR}${_SCRIPTDIR}";
 
