@@ -52,6 +52,12 @@ jQuery(document).ready(function($) {
         },
     });
     \$jQBody.trigger('wpu-ajax-ready');
+
+   /* Refresh content */
+    window.addEventListener('wpulivesearch_updated_content',function(){
+        window.dispatchEvent(new Event('vanilla-pjax-refresh'));
+    });
+
 });
 
 EOF
