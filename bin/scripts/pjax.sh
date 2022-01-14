@@ -28,39 +28,20 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('vanilla-pjax-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-pjax-init.js', array('jquery','vanilla-pjax'), '1.0.0', true);
 });
 
+add_action('wp_footer', function () {
+    echo '<div class="page-cover"></div>';
+}, 99);
+
 EOF
 );
 
 echo "${_functions_add}" >> "${_FUNCTIONS_PHP}";
 
-# Load script
-_js_init_add=$(cat <<EOF
+# Inject JS
+cat "${_SOURCEDIR}sources/scripts/vanilla-pjax/init.js" >> "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-pjax-init.js";
 
-jQuery(document).ready(function($) {
-    var \$jQBody = jQuery('body');
-    new vanillaPJAX({
-        targetContainer: document.body.querySelector('.main-content'),
-        ajaxParam: 'ajax',
-        callbackBeforeAJAX: function(newUrl, content) {
-            \$jQBody.trigger('wpu-ajax-loading');
-        },
-        callbackAfterLoad: function(newUrl, content) {
-            var \$values = document.getElementById('js-values');
-            document.title = \$values.getAttribute('data-page_title');
-            document.body.className = \$values.getAttribute('data-body_class');
-            \$jQBody.trigger('wpu-ajax-ready');
-        },
-    });
-    \$jQBody.trigger('wpu-ajax-ready');
+# Inject SCSS
+if [[ -f "${_SCSSPLUGIN}" ]];then
+    cat "${_SOURCEDIR}sources/scripts/vanilla-pjax/source.scss" >> "${_SCSSPLUGIN}";
+fi;
 
-   /* Refresh content */
-    window.addEventListener('wpulivesearch_updated_content',function(){
-        window.dispatchEvent(new Event('vanilla-pjax-refresh'));
-    });
-
-});
-
-EOF
-);
-
-echo "${_js_init_add}" >> "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-pjax-init.js";

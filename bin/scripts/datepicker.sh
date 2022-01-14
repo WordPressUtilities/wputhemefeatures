@@ -56,6 +56,6 @@ echo "${_js_init_add}" >> "${_CURRENT_DIR}${_SCRIPTDIR}/datepicker-init.js";
 
 # Inject SCSS
 if [[ -f "${_SCSSPLUGIN}" ]];then
-    cat "${_SOURCEDIR}sources/datepicker.scss" >> "${_SCSSPLUGIN}";
+    cat "${_SOURCEDIR}sources/scripts/datepicker/datepicker.scss" >> "${_SCSSPLUGIN}";
 fi;
 
