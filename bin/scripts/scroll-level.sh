@@ -16,6 +16,8 @@ bashutilities_submodule_or_install "https://github.com/JavaScriptUtilities/vanil
 # Back to the main folder
 cd "${_CURRENT_DIR}";
 
+_SCRIPT_VERSION=$(wputhemefeatures_get_version "${_CURRENT_DIR}${_SCRIPTDIR}/vanillaScrollLevel");
+
 # Load script
 _functions_add=$(cat <<EOF
 
@@ -24,8 +26,8 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('vanilla-scrolllevel', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaScrollLevel/js/vanilla-scrolllevel.min.js', array('jquery'), '0.2.0', true);
-    wp_enqueue_script('vanilla-scrolllevel-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-scrolllevel-init.js', array('jquery','vanilla-scrolllevel'), '0.2.0', true);
+    wp_enqueue_script('vanilla-scrolllevel', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaScrollLevel/js/vanilla-scrolllevel.min.js', array('jquery'), '${_SCRIPT_VERSION}', true);
+    wp_enqueue_script('vanilla-scrolllevel-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-scrolllevel-init.js', array('jquery','vanilla-scrolllevel'), '${_SCRIPT_VERSION}', true);
 });
 
 EOF

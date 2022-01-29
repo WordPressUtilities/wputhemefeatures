@@ -16,6 +16,8 @@ bashutilities_submodule_or_install "https://github.com/JavaScriptUtilities/vanil
 # Back to the main folder
 cd "${_CURRENT_DIR}";
 
+_SCRIPT_VERSION=$(wputhemefeatures_get_version "${_CURRENT_DIR}${_SCRIPTDIR}/vanillaScrollAnims");
+
 # Load script
 _functions_add=$(cat <<EOF
 
@@ -24,8 +26,8 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('vanilla-scrollanims', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaScrollAnims/js/vanilla-scrollanims.js', array('jquery'), '0.8.0', true);
-    wp_enqueue_script('vanilla-scrollanims-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-scrollanims-init.js', array('jquery','vanilla-scrollanims'), '0.8.0', true);
+    wp_enqueue_script('vanilla-scrollanims', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaScrollAnims/js/vanilla-scrollanims.js', array('jquery'), '${_SCRIPT_VERSION}', true);
+    wp_enqueue_script('vanilla-scrollanims-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-scrollanims-init.js', array('jquery','vanilla-scrollanims'), '${_SCRIPT_VERSION}', true);
 });
 
 EOF

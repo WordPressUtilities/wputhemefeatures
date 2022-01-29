@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.14.0';
+local _VERSION='0.15.0';
 cat <<EOF
 
 ###################################
@@ -39,9 +39,14 @@ fi;
 
 ## Find WordPress
 . "${_SOURCEDIR}inc/find-wordpress.sh";
+. "${_SOURCEDIR}inc/functions.sh";
 
 local _THEME_NAME=${PWD##*/};
 local _FUNCTIONS_PHP="${_CURRENT_DIR}functions.php";
+local _FUNCTIONS_SCRIPTS_PHP="${_CURRENT_DIR}inc/scripts.php";
+if [[ -f "${_FUNCTIONS_SCRIPTS_PHP}" ]];then
+    _FUNCTIONS_PHP="${_FUNCTIONS_SCRIPTS_PHP}";
+fi;
 local _SCSSPLUGIN="${_CURRENT_DIR}src/scss/${_THEME_NAME}/_plugins.scss";
 
 # Route to a script
