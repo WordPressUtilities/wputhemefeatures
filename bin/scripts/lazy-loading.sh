@@ -26,7 +26,8 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('vanilla-lazyloading', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaLazyLoad/js/vanilla-lazyloading.min.js', array(), '${_SCRIPT_VERSION}', true);
+    \$script_version='${_SCRIPT_VERSION}';
+    wp_enqueue_script('vanilla-lazyloading', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaLazyLoad/js/vanilla-lazyloading.min.js', array(), \$script_version true);
 });
 
 EOF

@@ -26,9 +26,10 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('vanilla-animate-words', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaAnimateWords/js/vanilla-animate-words.min.js', array(), '${_SCRIPT_VERSION}', true);
-    wp_enqueue_script('vanilla-animate-words-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-animate-words-init.js', array('jquery','vanilla-animate-words'), '${_SCRIPT_VERSION}', true);
-    wp_enqueue_style('vanilla-animate-words-css', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaAnimateWords/js/vanilla-animate-words.min.js', array(), '${_SCRIPT_VERSION}', false);
+    \$script_version='${_SCRIPT_VERSION}';
+    wp_enqueue_script('vanilla-animate-words', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaAnimateWords/js/vanilla-animate-words.min.js', array(), \$script_version true);
+    wp_enqueue_script('vanilla-animate-words-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-animate-words-init.js', array('jquery','vanilla-animate-words'), \$script_version true);
+    wp_enqueue_style('vanilla-animate-words-css', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaAnimateWords/css/vanilla-animate-words.css', array(), '${_SCRIPT_VERSION}');
 });
 
 EOF
