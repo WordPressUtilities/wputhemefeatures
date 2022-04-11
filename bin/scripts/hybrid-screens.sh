@@ -18,7 +18,6 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    \$script_version='${_SCRIPT_VERSION}';
     wp_enqueue_script('vanilla-hybridscreens', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-hybridscreens.js', array(), '1.0.0', true);
     wp_enqueue_script('vanilla-hybridscreens-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-hybridscreens-init.js', array('vanilla-hybridscreens'), '1.0.0', true);
 });

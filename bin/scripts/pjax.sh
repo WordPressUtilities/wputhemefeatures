@@ -27,8 +27,8 @@ _functions_add=$(cat <<EOF
 
 add_action('wp_enqueue_scripts', function () {
     \$script_version='${_SCRIPT_VERSION}';
-    wp_enqueue_script('vanilla-pjax', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaPJAX/js/vanilla-pjax.min.js', array('jquery'), \$script_version true);
-    wp_enqueue_script('vanilla-pjax-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-pjax-init.js', array('jquery','vanilla-pjax'), \$script_version true);
+    wp_enqueue_script('vanilla-pjax', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaPJAX/js/vanilla-pjax.min.js', array('jquery'), \$script_version, true);
+    wp_enqueue_script('vanilla-pjax-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-pjax-init.js', array('jquery','vanilla-pjax'), \$script_version, true);
 });
 
 add_action('wp_footer', function () {

@@ -18,7 +18,6 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    \$script_version='${_SCRIPT_VERSION}';
     wp_enqueue_script('jquery-ui-datepicker');
     wp_enqueue_script('${_THEME_NAME}-datepicker-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/datepicker-init.js', array('jquery','jquery-ui-datepicker'), '1.0.0', true);
 });
