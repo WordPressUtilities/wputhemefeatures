@@ -26,7 +26,7 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    \$script_version='${_SCRIPT_VERSION}';
+    \$script_version = '${_SCRIPT_VERSION}';
     wp_enqueue_script('vanilla-jsu-range', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaJsuRange/assets/js/range.min.js', array(), \$script_version, true);
     wp_enqueue_script('vanilla-jsu-range-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-jsu-range-init.js', array('jquery','vanilla-jsu-range'), \$script_version, true);
     wp_enqueue_style('vanilla-jsu-range-css', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaJsuRange/assets/css/range.css', array(), \$script_version);

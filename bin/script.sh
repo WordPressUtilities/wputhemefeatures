@@ -14,6 +14,9 @@ case "$1" in
     "lazy" | "lazy-loading")
         . "${_SOURCEDIR}bin/scripts/lazy-loading.sh" "${2}";
     ;;
+    "marquee" | "jqmarquee")
+        . "${_SOURCEDIR}bin/scripts/marquee.sh" "${2}";
+    ;;
     "backtotop")
         . "${_SOURCEDIR}bin/scripts/backtotop.sh" "${2}";
     ;;

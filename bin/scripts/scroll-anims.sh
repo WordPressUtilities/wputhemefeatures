@@ -26,7 +26,7 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    \$script_version='${_SCRIPT_VERSION}';
+    \$script_version = '${_SCRIPT_VERSION}';
     wp_enqueue_script('vanilla-scrollanims', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaScrollAnims/js/vanilla-scrollanims.js', array('jquery'), \$script_version, true);
     wp_enqueue_script('vanilla-scrollanims-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-scrollanims-init.js', array('jquery','vanilla-scrollanims'), \$script_version, true);
 });

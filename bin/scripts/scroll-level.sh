@@ -26,7 +26,7 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    \$script_version='${_SCRIPT_VERSION}';
+    \$script_version = '${_SCRIPT_VERSION}';
     wp_enqueue_script('vanilla-scrolllevel', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaScrollLevel/js/vanilla-scrolllevel.min.js', array('jquery'), \$script_version, true);
     wp_enqueue_script('vanilla-scrolllevel-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-scrolllevel-init.js', array('jquery','vanilla-scrolllevel'), \$script_version, true);
 });

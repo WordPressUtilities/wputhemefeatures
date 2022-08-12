@@ -26,7 +26,7 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    \$script_version='${_SCRIPT_VERSION}';
+    \$script_version = '${_SCRIPT_VERSION}';
     wp_enqueue_script('vanilla-jsuparallax', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaJsuParallax/js/vanilla-jsuparallax.min.js', array('jquery'), \$script_version, true);
     wp_enqueue_script('vanilla-jsuparallax-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-jsuparallax-init.js', array('jquery','vanilla-jsuparallax'), \$script_version, true);
 });
