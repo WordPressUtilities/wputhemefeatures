@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.18.0';
+local _VERSION='0.19.0';
 cat <<EOF
 
 ###################################
@@ -51,7 +51,7 @@ local _SCSSPLUGIN="${_CURRENT_DIR}src/scss/${_THEME_NAME}/_plugins.scss";
 
 # Route to a script
 case "$1" in
-    "script" | "lang" | "src")
+    "script" | "lang" | "src" | "upgrade-theme")
         . "${_SOURCEDIR}bin/${1}.sh" "${2}" "${3}" "${4}" "${5}";
     ;;
     "help" | "" | * )
