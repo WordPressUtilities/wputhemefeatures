@@ -38,3 +38,20 @@ done
 if [[ "${_has_function_file}" == '1' ]];then
     echo "- All function files where already created."
 fi;
+
+###################################
+## JS Files
+###################################
+
+_has_js_file="1";
+for _new_file in {"theme.json","package.json"}; do
+    if [[ ! -f "${_CURRENT_DIR}/${_new_file}" ]];then
+        echo "- Creating ${_new_file}";
+        _has_js_file="";
+        # Create new file
+        echo '{}' > "${_new_file}";
+    fi;
+done
+if [[ "${_has_js_file}" == '1' ]];then
+    echo "- All JS files where already created."
+fi;
