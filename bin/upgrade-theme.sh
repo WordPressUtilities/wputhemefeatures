@@ -5,13 +5,21 @@
 ###################################
 
 _has_protection="1";
-for _dir in {"inc","tpl","lang"}; do
+for _dir in {"src","inc","tpl","lang"}; do
     _protection_dir="${_CURRENT_DIR}/${_dir}";
     _protection_file="${_protection_dir}/.htaccess";
-    if [[ -d "${_protection_dir}" && ! -f "${_protection_file}" ]];then
-        _has_protection="0";
-        echo "- Protecting dir ${_dir}";
-        echo 'deny from all' > "${_protection_file}";
+    _protection_index="${_protection_dir}/index.php";
+    if [[ -d "${_protection_dir}" ]];then
+        if [[ ! -f "${_protection_file}" ]];then
+            _has_protection="0";
+            echo "- Protecting dir ${_dir}";
+            echo 'deny from all' > "${_protection_file}";
+        fi;
+        if [[ ! -f "${_protection_index}" ]];then
+            _has_protection="0";
+            echo "- Protecting index dir ${_dir}";
+            echo '<?php /* Silence */' > "${_protection_index}";
+        fi;
     fi;
 done;
 if [[ "${_has_protection}" == '1' ]];then
@@ -27,6 +35,7 @@ for _new_file in {"inc/helpers.php","inc/parent-theme.php","inc/scripts.php","in
     if [[ ! -f "${_CURRENT_DIR}/${_new_file}" ]];then
         echo "- Creating ${_new_file}";
         _has_function_file="";
+
         # Create new file
         echo '<?php' > "${_new_file}";
         _include_file="include dirname(__FILE__) . '/${_new_file}';";
