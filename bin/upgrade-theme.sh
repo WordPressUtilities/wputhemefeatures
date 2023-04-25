@@ -1,6 +1,14 @@
 #!/bin/bash
 
 ###################################
+## Ensure inc dir exists
+###################################
+
+if [[ ! -d "inc" ]];then
+    mkdir "inc";
+fi;
+
+###################################
 ## Protection
 ###################################
 
@@ -31,7 +39,7 @@ fi;
 ###################################
 
 _has_function_file="1";
-for _new_file in {"inc/helpers.php","inc/parent-theme.php","inc/scripts.php","inc/social.php","inc/styles.php"}; do
+for _new_file in {"inc/helpers.php","inc/parent-theme.php","inc/scripts.php","inc/social.php","inc/styles.php","inc/styles.php"}; do
     if [[ ! -f "${_CURRENT_DIR}/${_new_file}" ]];then
         echo "- Creating ${_new_file}";
         _has_function_file="";
