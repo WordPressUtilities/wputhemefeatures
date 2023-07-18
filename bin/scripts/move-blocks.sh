@@ -28,10 +28,24 @@ _functions_add=$(cat <<EOF
 add_action('wp_enqueue_scripts', function () {
     \$script_version = '${_SCRIPT_VERSION}';
     wp_enqueue_script('vanilla-moveblocks', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanillaMoveBlocks/js/vanilla-moveblocks.min.js', array(), \$script_version, true);
+    wp_enqueue_script('vanilla-moveblocks-init', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/vanilla-moveblocks-init.js', array(), \$script_version, true);
 });
 
 EOF
 );
 
 echo "${_functions_add}" >> "${_FUNCTIONS_PHP}";
+
+# Load script
+_js_init_add=$(cat <<EOF
+document.addEventListener("DOMContentLoaded", function() {
+    'use strict';
+    Array.prototype.forEach.call(document.querySelectorAll('[data-vmbtargets]'), function(el, i) {
+        new vanillaMoveBlocks(el);
+    });
+});
+EOF
+);
+
+echo "${_js_init_add}" >> "${_CURRENT_DIR}${_SCRIPTDIR}/vanilla-moveblocks-init.js";
 
