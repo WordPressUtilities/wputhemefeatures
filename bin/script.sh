@@ -41,6 +41,9 @@ case "$1" in
     "scrolllevel" | "scroll-level")
         . "${_SOURCEDIR}bin/scripts/scroll-level.sh" "${2}";
     ;;
+    "downloadurl" | "download-url")
+        . "${_SOURCEDIR}bin/scripts/download-url.sh" "${2}";
+    ;;
     "help" | "" | * )
         . "${_SOURCEDIR}bin/help.sh";
     ;;
