@@ -46,7 +46,7 @@ for _new_file in {"inc/helpers.php","inc/parent-theme.php","inc/scripts.php","in
 
         # Create new file
         echo '<?php' > "${_new_file}";
-        _include_file="include dirname(__FILE__) . '/${_new_file}';";
+        _include_file="require __DIR__ . '/${_new_file}';";
 
         # Include it
         awk -v varnewfile="${_include_file}" 'NR==3{print varnewfile}1' "${_FUNCTIONS_PHP}" > tmpwputh && mv tmpwputh "${_FUNCTIONS_PHP}"
@@ -72,3 +72,14 @@ done
 if [[ "${_has_js_file}" == '1' ]];then
     echo "- All JS files where already created."
 fi;
+
+###################################
+## Language files
+###################################
+
+function wputhemefeatures_upgrade_language_files(){
+    rm "${_CURRENT_DIR}"lang/*.l10n.php;
+    wp i18n make-php "${_CURRENT_DIR}"lang;
+    echo "- Language files updated.";
+}
+wputhemefeatures_upgrade_language_files;
