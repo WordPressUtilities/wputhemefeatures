@@ -77,9 +77,18 @@ fi;
 ## Language files
 ###################################
 
-function wputhemefeatures_upgrade_language_files(){
-    rm "${_CURRENT_DIR}"lang/*.l10n.php;
-    wp i18n make-php "${_CURRENT_DIR}"lang;
+function wputhemefeatures_upgrade_language_files() {
+    local _LANGDIR="${_CURRENT_DIR}lang/";
+    local _LANGDIR_INC="${_CURRENT_DIR}inc/lang/";
+    if [[ -d "${_LANGDIR_INC}" ]]; then
+        _LANGDIR="${_LANGDIR_INC}";
+    fi
+    if [[ ! -d "${_LANGDIR}" ]]; then
+        echo "- No lang dir found.";
+        return 0;
+    fi
+    rm "${_LANGDIR}"*.l10n.php;
+    wp i18n make-php "${_LANGDIR}";
     echo "- Language files updated.";
 }
 wputhemefeatures_upgrade_language_files;
