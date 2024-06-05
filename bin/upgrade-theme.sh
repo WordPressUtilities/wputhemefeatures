@@ -87,7 +87,9 @@ function wputhemefeatures_upgrade_language_files() {
         echo "- No lang dir found.";
         return 0;
     fi
-    rm "${_LANGDIR}"*.l10n.php;
+    if ls "${_LANGDIR}"*.l10n.php &>/dev/null; then
+        rm "${_LANGDIR}"*.l10n.php
+    fi
     wp i18n make-php "${_LANGDIR}";
     echo "- Language files updated.";
 }
