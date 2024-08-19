@@ -48,7 +48,7 @@ _functions_add=$(cat <<EOF
 ###################################
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('${_THEME_NAME}-${_script_id}', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/${_filename}}', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('${_THEME_NAME}-${_script_id}', get_stylesheet_directory_uri() . '/${_SCRIPTDIR}/${_filename}', array('jquery'), '1.0.0', true);
 });
 
 EOF
