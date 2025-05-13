@@ -44,7 +44,7 @@ EOF
 );
 
 ## Check lang registration
-if ! grep -q 'load_theme_textdomain' "${_FUNCTIONS_PHP}"; then
-    echo "# Registering lang in functions.php"
+if ! grep -q 'load_theme_textdomain' "${_FUNCTIONS_PHP}" && ! grep -q 'load_theme_textdomain' "${_BASE_FUNCTIONS_PHP}"; then
+    echo "# Registering lang in ${_FUNCTIONS_PHP}"
     echo "${_functions_add}" >> "${_FUNCTIONS_PHP}";
 fi

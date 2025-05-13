@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.21.3';
+local _VERSION='0.22.0';
 cat <<EOF
 
 ###################################
@@ -43,6 +43,7 @@ fi;
 
 local _THEME_NAME=${PWD##*/};
 local _FUNCTIONS_PHP="${_CURRENT_DIR}functions.php";
+local _BASE_FUNCTIONS_PHP="${_FUNCTIONS_PHP}";
 local _FUNCTIONS_SCRIPTS_PHP="${_CURRENT_DIR}inc/scripts.php";
 if [[ -f "${_FUNCTIONS_SCRIPTS_PHP}" ]];then
     _FUNCTIONS_PHP="${_FUNCTIONS_SCRIPTS_PHP}";

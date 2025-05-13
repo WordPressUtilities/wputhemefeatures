@@ -30,6 +30,10 @@ cd wputhemefeatures;_DIR_WPUTHEMEFEATURES=$(pwd);echo "alias wputhemefeatures=\"
 
 `wputhemefeatures script hybrid;`
 
+### Add a new lang
+
+`wputhemefeatures lang es_ES;`
+
 ### Go to this tool source.
 
 `wputhemefeatures src;`
