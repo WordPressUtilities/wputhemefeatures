@@ -2,7 +2,7 @@
 
 WPUThemeFeatures(){
 
-local _VERSION='0.22.0';
+local _VERSION='0.22.1';
 cat <<EOF
 
 ###################################
@@ -60,6 +60,8 @@ case "$1" in
     ;;
 esac
 
+## Cleanup
+. "${_SOURCEDIR}inc/stop.sh";
 }
 
 WPUThemeFeatures "$@";
