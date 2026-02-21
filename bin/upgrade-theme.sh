@@ -39,8 +39,10 @@ fi;
 ###################################
 
 _has_function_file="1";
+_current_theme_name=${PWD##*/};
+
 for _new_file in {"inc/helpers.php","inc/parent-theme.php","inc/scripts.php","inc/social.php","inc/styles.php","inc/styles.php"}; do
-    if [[ ! -f "${_CURRENT_DIR}/${_new_file}" ]];then
+    if [[ "${_current_theme_name}" != "WPUTheme"  &&  ! -f "${_CURRENT_DIR}/${_new_file}" ]];then
         echo "- Creating ${_new_file}";
         _has_function_file="";
 
@@ -53,7 +55,7 @@ for _new_file in {"inc/helpers.php","inc/parent-theme.php","inc/scripts.php","in
     fi;
 done
 if [[ "${_has_function_file}" == '1' ]];then
-    echo "- All function files where already created."
+    echo "- All functions files were already created."
 fi;
 
 ###################################
